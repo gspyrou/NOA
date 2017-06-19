@@ -12,4 +12,4 @@ python NOA_getbbnet_auto_catalog.py <YYYY> <MM>
 
 e.g
 
-python NOA_getbbnet_auto_catalog.py 2017 01
+python NOA_getbbnet_auto_catalog.py 2017 02
