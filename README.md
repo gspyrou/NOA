@@ -8,8 +8,17 @@ pip install beautifulsoup4
 pip install html5lib
 
 ## Download data
-python NOA_getbbnet_auto_catalog.py <YYYY> <MM>
+### Automatic locations
+python NOA_getbbnet.py <YYYY> <MM> automatic
+ 
+e.g for February 2017 
 
-e.g
+python NOA_getbbnet.py 2017 02 automatic
 
-python NOA_getbbnet_auto_catalog.py 2017 02
+### Revised (manual) locations
+python NOA_getbbnet.py <YYYY> <MM> manual
+
+e.g for January 2017
+
+python NOA_getbbnet.py 2017 01 manual
+
