@@ -9,14 +9,14 @@ pip install html5lib
 
 ## Download data
 ### Automatic locations
-python NOA_getbbnet_automatic.py <YYYY> <MM> 
+python NOA_getbbnet_automatic.py YYYY MM 
  
 e.g for February 2017 
 
 python NOA_getbbnet.py 2017 02 
 
 ### Revised (manual) locations
-python NOA_getbbnet_manual.py <YYYY> <MM> 
+python NOA_getbbnet_manual.py YYYY MM 
 
 e.g for January 2017
 
