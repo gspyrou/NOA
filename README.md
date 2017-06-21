@@ -22,3 +22,10 @@ e.g for January 2017
 
 python NOA_getbbnet_manual.py 2017 01 >Jan_2017.txt
 
+### Get data for an event
+python NOA_getphases.py YYYY MM
+
+e.g for January 2017
+
+python NOA_getphases.py 2017 01 > Jan_2017.txt
+
