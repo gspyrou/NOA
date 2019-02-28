@@ -1,4 +1,5 @@
 from bs4 import BeautifulSoup
+import matplotlib.pyplot as plt
 import urllib2
 import sys
 import datetime
@@ -11,12 +12,16 @@ else:
 
 months = ["01","02","03","04","05","06","07","08","09","10","11","12"]
 for month in months:    
-    content = urllib2.urlopen('http://bbnet.gein.noa.gr//alerts_manual/{0}/{1}/manual_alerts_{2}_{3}.html'.format(year,month,month,year)).read()
+    content = urllib2.urlopen('http://bbnet.gein.noa.gr/Events/{0}/{1}'.format(year,month)).read()
     soup = BeautifulSoup(content);
     for link in soup.find_all('a'):
             if link.has_attr('href'):
-                    content =urllib2.urlopen('http://bbnet.gein.noa.gr//alerts_manual/{0}/{1}/{2}'.format(year,month,link['href'][1:])).read()
+                if (link.text.find(".html")>0):
+                    content =urllib2.urlopen('http://bbnet.gein.noa.gr/Events/{0}/{1}/{2}'.format(year,month,link.text)).read(); 
+                #http://bbnet.gein.noa.gr//alerts_manual/{0}/{1}/{2}'.format(year,month,link['href'][1:])).read()
                     soup = BeautifulSoup(content);
-                    print '\n'.join(soup.find("pre").text.split('\n')[2:])
+                    data = soup.find("pre").text
+                    if (data.find('Automatic Solution')<0):
+                        print '\n'.join(data.split('\n')[2:])
 
         
